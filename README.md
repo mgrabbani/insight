@@ -19,14 +19,14 @@ The script does the following -
    * *The length of the text is saved in len_before*
    * *Each character, ch, in the text having ord(ch) < 128 are kept and other discarded*
    * *Again the length of the text is assigned to len_after*
-   * *If the len_after is less than len_before, then a unicode counter is incremented.*
-   * *Leading and trailing spaces, if any, are also removed.
-   * * 'created_at' is extracted from the dict
-   * * text and time are saved
+   * *If the len_after is less than len_before, then a unicode counter is incremented*
+   * *Leading and trailing spaces, if any, are also removed*
+   * *'created_at' is extracted from the dict*
+   * *text and time are saved*
 
 ### Notes
-1. When the tweets.txt is read in python, I found that the format was in unicode
-The python 'ch in text' (checking if certain character is in a string) does not catch '\/' and '\\' but the when the text (after cleaing other characters) is written to a file '\/' and '\\' are written as simply '/' and '\'.
+1. When the tweets.txt is read in python, I found that the read lines were already in unicode.
+The python 'ch in text' (checking if certain character, ch, is in a string, text) does not catch '\/' and '\\', but the when the text (after cleaing other characters) is written to a file, '\/' and '\\' are written as simply '/' and '\'.
 2. ord(ch) < 33 did not seem to affect the extracted test, but his could easily be acommodated in the code.
 
 ## Feature 2: Calculate the average degree
@@ -51,4 +51,4 @@ graph is updated. If a hashtag is an existing key of the graph dict, the other h
 If the hashtag is not in the keys of the graph, new key empty set for that key is created and and the connected hashtags are saved in the set.
 The set length is tracked and num_edges is updated. 
 
-Also node removal and addition triggeres update of num_nodes
+Also node removal and addition triggeres update of num_nodes.
